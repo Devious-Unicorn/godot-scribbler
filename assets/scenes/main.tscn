@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dmjdgrkug3wga"]
+
+[ext_resource type="Script" uid="uid://dgr5uia1f4d06" path="res://assets/scripts/main.gd" id="1_mr7gh"]
+[ext_resource type="Theme" uid="uid://cepsbd2e5xp3f" path="res://assets/themes/BG.tres" id="2_kpi06"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mr7gh"]
+bg_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+
+[sub_resource type="Theme" id="Theme_kpi06"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_mr7gh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfgan"]
+bg_color = Color(0.12156863, 0.12156863, 0.12941177, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.12156863, 0.12156863, 0.12941177, 1)
+
+[sub_resource type="Theme" id="Theme_sfrgt"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_dfgan")
+
+[node name="Main" type="Control" unique_id=1089813616]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mr7gh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=918143359]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSplitContainer" type="VSplitContainer" parent="VBoxContainer" unique_id=1586011686]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 2
+split_offsets = PackedInt32Array(128)
+split_offset = 128
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/VSplitContainer" unique_id=1461004789]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+theme = ExtResource("2_kpi06")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/PanelContainer" unique_id=2001773118]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/VSplitContainer" unique_id=242379607]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sidebar" type="PanelContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer" unique_id=1084769635]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme = SubResource("Theme_kpi06")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/Sidebar" unique_id=348501182]
+layout_mode = 2
+
+[node name="Main workspace" type="PanelContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer" unique_id=100620950]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme = SubResource("Theme_sfrgt")
