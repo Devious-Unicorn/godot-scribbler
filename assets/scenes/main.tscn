@@ -14,16 +14,11 @@ border_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 [sub_resource type="Theme" id="Theme_kpi06"]
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_mr7gh")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfgan"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpi06"]
 bg_color = Color(0.12156863, 0.12156863, 0.12941177, 1)
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color(0.12156863, 0.12156863, 0.12941177, 1)
 
-[sub_resource type="Theme" id="Theme_sfrgt"]
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_dfgan")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfgan"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
 
 [node name="Main" type="Control" unique_id=1089813616]
 layout_mode = 3
@@ -48,28 +43,48 @@ layout_mode = 2
 split_offsets = PackedInt32Array(128)
 split_offset = 128
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/VSplitContainer" unique_id=1461004789]
+[node name="Toolbar" type="PanelContainer" parent="VBoxContainer/VSplitContainer" unique_id=1461004789]
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 theme = ExtResource("2_kpi06")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/PanelContainer" unique_id=2001773118]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/Toolbar" unique_id=2001773118]
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/VSplitContainer" unique_id=242379607]
 layout_mode = 2
 size_flags_vertical = 3
+split_offsets = PackedInt32Array(196)
+split_offset = 196
 
 [node name="Sidebar" type="PanelContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer" unique_id=1084769635]
-custom_minimum_size = Vector2(256, 0)
+custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 theme = SubResource("Theme_kpi06")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/Sidebar" unique_id=348501182]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/Sidebar" unique_id=1495193106]
 layout_mode = 2
+horizontal_scroll_mode = 0
 
-[node name="Main workspace" type="PanelContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer" unique_id=100620950]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/Sidebar/ScrollContainer" unique_id=348501182]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer" unique_id=365502120]
+layout_mode = 2
+split_offsets = PackedInt32Array(196)
+split_offset = 196
+
+[node name="Pages" type="PanelContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/HSplitContainer" unique_id=759101500]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme = ExtResource("2_kpi06")
+theme_override_styles/panel = SubResource("StyleBoxFlat_kpi06")
+
+[node name="Main workspace" type="PanelContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/HSplitContainer" unique_id=100620950]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
-theme = SubResource("Theme_sfrgt")
+theme = ExtResource("2_kpi06")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dfgan")
