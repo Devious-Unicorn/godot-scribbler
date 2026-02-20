@@ -3,3 +3,4 @@
 /android/
 *.translations
 *.import
+*.xcf
