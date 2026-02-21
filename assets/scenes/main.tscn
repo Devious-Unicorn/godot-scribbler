@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://dgr5uia1f4d06" path="res://assets/scripts/main.gd" id="1_mr7gh"]
 [ext_resource type="Theme" uid="uid://cepsbd2e5xp3f" path="res://assets/themes/BG.tres" id="2_kpi06"]
 [ext_resource type="Theme" uid="uid://bvcdolp3y5iok" path="res://assets/themes/Header.tres" id="3_dfgan"]
+[ext_resource type="Theme" uid="uid://dd0e45ra2x2xg" path="res://assets/themes/Horizontal line.tres" id="4_sfrgt"]
+[ext_resource type="Theme" uid="uid://dnrr0pq6qbitx" path="res://assets/themes/Add button.tres" id="5_vesw4"]
+[ext_resource type="Texture2D" uid="uid://c6jtxhawp5ks8" path="res://assets/sprites/Add new icon.png" id="6_xplbd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mr7gh"]
 bg_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
@@ -17,11 +20,17 @@ PanelContainer/styles/panel = SubResource("StyleBoxFlat_mr7gh")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpi06"]
 bg_color = Color(0.12156863, 0.12156863, 0.12941177, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.12156863, 0.12156863, 0.12941177, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfgan"]
 bg_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
 
 [node name="Main" type="Control" unique_id=1089813616]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,6 +40,7 @@ grow_vertical = 2
 script = ExtResource("1_mr7gh")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=918143359]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,73 +49,146 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VSplitContainer" type="VSplitContainer" parent="VBoxContainer" unique_id=1586011686]
+texture_filter = 1
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 2
 split_offsets = PackedInt32Array(128)
 split_offset = 128
 
 [node name="Toolbar" type="PanelContainer" parent="VBoxContainer/VSplitContainer" unique_id=1461004789]
+texture_filter = 1
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 theme = ExtResource("2_kpi06")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/Toolbar" unique_id=2001773118]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/Toolbar" unique_id=383062366]
+layout_mode = 2
+
+[node name="Toolbar options" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/Toolbar/VBoxContainer" unique_id=2001773118]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="File" type="Button" parent="VBoxContainer/VSplitContainer/Toolbar/VBoxContainer/Toolbar options" unique_id=1158308959]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("5_vesw4")
+theme_override_font_sizes/font_size = 24
+text = "File"
+
+[node name="Home" type="Button" parent="VBoxContainer/VSplitContainer/Toolbar/VBoxContainer/Toolbar options" unique_id=1140839729]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("5_vesw4")
+theme_override_font_sizes/font_size = 24
+text = "Home"
+
+[node name="Insert" type="Button" parent="VBoxContainer/VSplitContainer/Toolbar/VBoxContainer/Toolbar options" unique_id=1624897442]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("5_vesw4")
+theme_override_font_sizes/font_size = 24
+text = "Insert"
 
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/VSplitContainer" unique_id=242379607]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 split_offsets = PackedInt32Array(196)
 split_offset = 196
 
 [node name="Sidebar" type="PanelContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer" unique_id=1084769635]
+texture_filter = 1
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 theme = SubResource("Theme_kpi06")
 
-[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/HSplitContainer/Sidebar" unique_id=1925005372]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/Sidebar" unique_id=1143160613]
+texture_filter = 1
 layout_mode = 2
-size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/HSplitContainer/Sidebar/VBoxContainer" unique_id=1925005372]
+texture_filter = 1
+layout_mode = 2
 theme = ExtResource("3_dfgan")
 text = "Your notebooks"
+horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/Sidebar" unique_id=1495193106]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/VSplitContainer/HSplitContainer/Sidebar/VBoxContainer" unique_id=1894803308]
+texture_filter = 1
 layout_mode = 2
+theme = ExtResource("4_sfrgt")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/Sidebar/VBoxContainer" unique_id=1495193106]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/Sidebar/ScrollContainer" unique_id=348501182]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/Sidebar/VBoxContainer/ScrollContainer" unique_id=348501182]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Add New Notebook" type="Button" parent="VBoxContainer/VSplitContainer/HSplitContainer/Sidebar/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1442906174]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("5_vesw4")
+text = " Add new notebook"
+icon = ExtResource("6_xplbd")
+
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer" unique_id=365502120]
+texture_filter = 1
 layout_mode = 2
 split_offsets = PackedInt32Array(196)
 split_offset = 196
 
 [node name="Pages" type="PanelContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/HSplitContainer" unique_id=759101500]
+texture_filter = 1
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 theme = ExtResource("2_kpi06")
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpi06")
 
-[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/HSplitContainer/HSplitContainer/Pages" unique_id=2145862488]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/HSplitContainer/Pages" unique_id=480743379]
+texture_filter = 1
 layout_mode = 2
-size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/VSplitContainer/HSplitContainer/HSplitContainer/Pages/VBoxContainer" unique_id=2145862488]
+texture_filter = 1
+layout_mode = 2
 theme = ExtResource("3_dfgan")
 text = "Your notes"
+horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/HSplitContainer/Pages" unique_id=601848036]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/VSplitContainer/HSplitContainer/HSplitContainer/Pages/VBoxContainer" unique_id=747748828]
+texture_filter = 1
 layout_mode = 2
+theme = ExtResource("4_sfrgt")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/HSplitContainer/Pages/VBoxContainer" unique_id=601848036]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/HSplitContainer/Pages/ScrollContainer" unique_id=1181573542]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/HSplitContainer/Pages/VBoxContainer/ScrollContainer" unique_id=1181573542]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Add New Page" type="Button" parent="VBoxContainer/VSplitContainer/HSplitContainer/HSplitContainer/Pages/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1592189836]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("5_vesw4")
+text = " Add new note"
+icon = ExtResource("6_xplbd")
+
 [node name="Main workspace" type="PanelContainer" parent="VBoxContainer/VSplitContainer/HSplitContainer/HSplitContainer" unique_id=100620950]
+texture_filter = 1
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 theme = ExtResource("2_kpi06")

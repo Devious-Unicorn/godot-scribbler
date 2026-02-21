@@ -1,0 +1,34 @@
+[gd_resource type="Theme" format=3 uid="uid://dnrr0pq6qbitx"]
+
+[ext_resource type="FontFile" uid="uid://dxv6dbr7f1v1h" path="res://assets/fonts/helvetica-255/Helvetica-Bold.ttf" id="1_nlh4c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vy6vj"]
+bg_color = Color(1, 1, 1, 0.11764706)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 0.11764706)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjalj"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fild4"]
+bg_color = Color(1, 1, 1, 0.16078432)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 0.16078432)
+
+[resource]
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_nlh4c")
+Button/styles/hover = SubResource("StyleBoxFlat_vy6vj")
+Button/styles/normal = SubResource("StyleBoxFlat_bjalj")
+Button/styles/pressed = SubResource("StyleBoxFlat_fild4")
