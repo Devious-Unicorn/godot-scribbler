@@ -1,55 +1,5 @@
 [gd_scene format=3 uid="uid://be1hkkljrcqb4"]
 
-[ext_resource type="Texture2D" uid="uid://bp4g38kgwi01g" path="res://assets/sprites/Home Tab/Left Align Paragraph.png" id="1_nxesf"]
-[ext_resource type="Texture2D" uid="uid://b1www24gxc52s" path="res://assets/sprites/Home Tab/Left Align Paragraph pressed.png" id="2_q6w0m"]
-[ext_resource type="Texture2D" uid="uid://cjjykopxi2vck" path="res://assets/sprites/Home Tab/Left Align Paragraph hover.png" id="3_1cupa"]
-[ext_resource type="Texture2D" uid="uid://bqlwq6uul64ug" path="res://assets/sprites/Home Tab/Center Align Paragraph.png" id="4_85qkw"]
-[ext_resource type="Texture2D" uid="uid://by5ky53td073r" path="res://assets/sprites/Home Tab/Center Align Paragraph pressed.png" id="5_dbfir"]
-[ext_resource type="Texture2D" uid="uid://cjpdfvmenk40t" path="res://assets/sprites/Home Tab/Center Align Paragraph hover.png" id="6_ey2fe"]
-[ext_resource type="Texture2D" uid="uid://clroi74s2mqec" path="res://assets/sprites/Home Tab/Right Align Paragraph.png" id="7_666wh"]
-[ext_resource type="Texture2D" uid="uid://ut768eg3slk6" path="res://assets/sprites/Home Tab/Right Align Paragraph pressed.png" id="8_mip42"]
-[ext_resource type="Texture2D" uid="uid://c55rssd7qv5pj" path="res://assets/sprites/Home Tab/Right Align Paragraph hover.png" id="9_vygof"]
-
 [node name="Home tab" type="Control" unique_id=795841860]
 layout_mode = 3
 anchors_preset = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1478782691]
-custom_minimum_size = Vector2(1920, 0)
-layout_mode = 0
-offset_right = 1920.0
-size_flags_vertical = 3
-theme_override_constants/separation = 8
-
-[node name="Left Align" type="TextureButton" parent="HBoxContainer" unique_id=1842682747]
-texture_filter = 1
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-tooltip_text = "Left align paragraph."
-texture_normal = ExtResource("1_nxesf")
-texture_pressed = ExtResource("2_q6w0m")
-texture_hover = ExtResource("3_1cupa")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Center Align" type="TextureButton" parent="HBoxContainer" unique_id=1447776262]
-texture_filter = 1
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-tooltip_text = "Center align paragraph."
-texture_normal = ExtResource("4_85qkw")
-texture_pressed = ExtResource("5_dbfir")
-texture_hover = ExtResource("6_ey2fe")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Right Align" type="TextureButton" parent="HBoxContainer" unique_id=647953253]
-texture_filter = 1
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-tooltip_text = "Center align paragraph."
-texture_normal = ExtResource("7_666wh")
-texture_pressed = ExtResource("8_mip42")
-texture_hover = ExtResource("9_vygof")
-ignore_texture_size = true
-stretch_mode = 0

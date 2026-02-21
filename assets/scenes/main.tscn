@@ -3,10 +3,18 @@
 [ext_resource type="Script" uid="uid://dgr5uia1f4d06" path="res://assets/scripts/main.gd" id="1_mr7gh"]
 [ext_resource type="Theme" uid="uid://cepsbd2e5xp3f" path="res://assets/themes/BG.tres" id="2_kpi06"]
 [ext_resource type="Theme" uid="uid://bvcdolp3y5iok" path="res://assets/themes/Header.tres" id="3_dfgan"]
+[ext_resource type="Texture2D" uid="uid://bp4g38kgwi01g" path="res://assets/sprites/Home Tab/Left Align Paragraph.png" id="4_ahyqc"]
 [ext_resource type="Theme" uid="uid://dd0e45ra2x2xg" path="res://assets/themes/Horizontal line.tres" id="4_sfrgt"]
-[ext_resource type="PackedScene" uid="uid://be1hkkljrcqb4" path="res://assets/scenes/home_tab.tscn" id="4_xplbd"]
+[ext_resource type="Texture2D" uid="uid://b1www24gxc52s" path="res://assets/sprites/Home Tab/Left Align Paragraph pressed.png" id="5_t7a27"]
 [ext_resource type="Theme" uid="uid://dnrr0pq6qbitx" path="res://assets/themes/Add button.tres" id="5_vesw4"]
+[ext_resource type="Texture2D" uid="uid://cjjykopxi2vck" path="res://assets/sprites/Home Tab/Left Align Paragraph hover.png" id="6_ftd1h"]
 [ext_resource type="Texture2D" uid="uid://c6jtxhawp5ks8" path="res://assets/sprites/Add new icon.png" id="6_xplbd"]
+[ext_resource type="Texture2D" uid="uid://bqlwq6uul64ug" path="res://assets/sprites/Home Tab/Center Align Paragraph.png" id="7_xqcey"]
+[ext_resource type="Texture2D" uid="uid://by5ky53td073r" path="res://assets/sprites/Home Tab/Center Align Paragraph pressed.png" id="8_uwelg"]
+[ext_resource type="Texture2D" uid="uid://cjpdfvmenk40t" path="res://assets/sprites/Home Tab/Center Align Paragraph hover.png" id="9_v3q3d"]
+[ext_resource type="Texture2D" uid="uid://clroi74s2mqec" path="res://assets/sprites/Home Tab/Right Align Paragraph.png" id="10_onyvt"]
+[ext_resource type="Texture2D" uid="uid://ut768eg3slk6" path="res://assets/sprites/Home Tab/Right Align Paragraph pressed.png" id="11_q5xp6"]
+[ext_resource type="Texture2D" uid="uid://c55rssd7qv5pj" path="res://assets/sprites/Home Tab/Right Align Paragraph hover.png" id="12_m64nd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mr7gh"]
 bg_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
@@ -62,39 +70,65 @@ custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 theme = ExtResource("2_kpi06")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VSplitContainer/Toolbar" unique_id=383062366]
-layout_mode = 2
-
-[node name="Toolbar options" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/Toolbar/VBoxContainer" unique_id=2001773118]
+[node name="Toolbar options" type="TabContainer" parent="VBoxContainer/VSplitContainer/Toolbar" unique_id=1584385808]
 texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = 8
+current_tab = 0
 
-[node name="File" type="Button" parent="VBoxContainer/VSplitContainer/Toolbar/VBoxContainer/Toolbar options" unique_id=1158308959]
+[node name="File" type="Button" parent="VBoxContainer/VSplitContainer/Toolbar/Toolbar options" unique_id=1158308959]
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("5_vesw4")
 theme_override_font_sizes/font_size = 24
-text = "File"
+metadata/_tab_index = 0
 
-[node name="Home" type="Button" parent="VBoxContainer/VSplitContainer/Toolbar/VBoxContainer/Toolbar options" unique_id=1140839729]
-layout_mode = 2
-size_flags_vertical = 0
-theme = ExtResource("5_vesw4")
-theme_override_font_sizes/font_size = 24
-text = "Home"
-
-[node name="Insert" type="Button" parent="VBoxContainer/VSplitContainer/Toolbar/VBoxContainer/Toolbar options" unique_id=1624897442]
-layout_mode = 2
-size_flags_vertical = 0
-theme = ExtResource("5_vesw4")
-theme_override_font_sizes/font_size = 24
-text = "Insert"
-
-[node name="Home tab" parent="VBoxContainer/VSplitContainer/Toolbar/VBoxContainer" unique_id=795841860 instance=ExtResource("4_xplbd")]
+[node name="Home" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/Toolbar/Toolbar options" unique_id=1387404059]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 8
+metadata/_tab_index = 1
+
+[node name="Left Align" type="TextureButton" parent="VBoxContainer/VSplitContainer/Toolbar/Toolbar options/Home" unique_id=1375134145]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+tooltip_text = "Left align paragraph."
+texture_normal = ExtResource("4_ahyqc")
+texture_pressed = ExtResource("5_t7a27")
+texture_hover = ExtResource("6_ftd1h")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Center Align" type="TextureButton" parent="VBoxContainer/VSplitContainer/Toolbar/Toolbar options/Home" unique_id=1310933378]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+tooltip_text = "Center align paragraph."
+texture_normal = ExtResource("7_xqcey")
+texture_pressed = ExtResource("8_uwelg")
+texture_hover = ExtResource("9_v3q3d")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Right Align" type="TextureButton" parent="VBoxContainer/VSplitContainer/Toolbar/Toolbar options/Home" unique_id=1112244821]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+tooltip_text = "Center align paragraph."
+texture_normal = ExtResource("10_onyvt")
+texture_pressed = ExtResource("11_q5xp6")
+texture_hover = ExtResource("12_m64nd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Insert" type="HBoxContainer" parent="VBoxContainer/VSplitContainer/Toolbar/Toolbar options" unique_id=1424422683]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("5_vesw4")
+metadata/_tab_index = 2
 
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/VSplitContainer" unique_id=242379607]
 texture_filter = 1
