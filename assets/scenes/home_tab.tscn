@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://be1hkkljrcqb4"]
-
-[node name="Home tab" type="Control" unique_id=795841860]
-layout_mode = 3
-anchors_preset = 0
