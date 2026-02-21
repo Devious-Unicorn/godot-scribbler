@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://cepsbd2e5xp3f" path="res://assets/themes/BG.tres" id="2_kpi06"]
 [ext_resource type="Theme" uid="uid://bvcdolp3y5iok" path="res://assets/themes/Header.tres" id="3_dfgan"]
 [ext_resource type="Theme" uid="uid://dd0e45ra2x2xg" path="res://assets/themes/Horizontal line.tres" id="4_sfrgt"]
+[ext_resource type="PackedScene" uid="uid://be1hkkljrcqb4" path="res://assets/scenes/home_tab.tscn" id="4_xplbd"]
 [ext_resource type="Theme" uid="uid://dnrr0pq6qbitx" path="res://assets/themes/Add button.tres" id="5_vesw4"]
 [ext_resource type="Texture2D" uid="uid://c6jtxhawp5ks8" path="res://assets/sprites/Add new icon.png" id="6_xplbd"]
 
@@ -90,6 +91,10 @@ size_flags_vertical = 0
 theme = ExtResource("5_vesw4")
 theme_override_font_sizes/font_size = 24
 text = "Insert"
+
+[node name="Home tab" parent="VBoxContainer/VSplitContainer/Toolbar/VBoxContainer" unique_id=795841860 instance=ExtResource("4_xplbd")]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/VSplitContainer" unique_id=242379607]
 texture_filter = 1
