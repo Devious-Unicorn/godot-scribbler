@@ -95,8 +95,18 @@ size_flags_vertical = 3
 theme_override_constants/separation = 8
 metadata/_tab_index = 1
 
-[node name="ItemList" type="ItemList" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home" unique_id=1138164075]
+[node name="Font selection" type="OptionButton" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home" unique_id=1292267207]
+custom_minimum_size = Vector2(96, 32)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+selected = 0
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "test"
+popup/item_0/id = 0
+popup/item_1/text = "teset"
+popup/item_1/id = 1
 
 [node name="Paragraph alignment" type="OptionButton" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home" unique_id=1734297156]
 custom_minimum_size = Vector2(64, 64)
@@ -106,6 +116,7 @@ size_flags_vertical = 4
 theme = SubResource("Theme_ftd1h")
 icon_alignment = 1
 expand_icon = true
+selected = 0
 item_count = 3
 popup/item_0/icon = ExtResource("4_ahyqc")
 popup/item_0/id = 0
