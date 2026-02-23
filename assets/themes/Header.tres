@@ -3,5 +3,5 @@
 [ext_resource type="FontFile" uid="uid://dxv6dbr7f1v1h" path="res://assets/fonts/helvetica-255/Helvetica-Bold.ttf" id="1_rv814"]
 
 [resource]
-Label/font_sizes/font_size = 20
+Label/font_sizes/font_size = 24
 Label/fonts/font = ExtResource("1_rv814")

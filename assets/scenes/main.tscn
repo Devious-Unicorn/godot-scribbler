@@ -8,9 +8,23 @@
 [ext_resource type="Script" uid="uid://bjgd8r4xi1pe5" path="res://assets/scripts/file_screen.gd" id="4_ftd1h"]
 [ext_resource type="Theme" uid="uid://dd0e45ra2x2xg" path="res://assets/themes/Horizontal line.tres" id="4_sfrgt"]
 [ext_resource type="Theme" uid="uid://dnrr0pq6qbitx" path="res://assets/themes/Add button.tres" id="5_vesw4"]
+[ext_resource type="Texture2D" uid="uid://dnov1wgxisbt5" path="res://assets/sprites/Home Tab/Bold icon.png" id="6_rin3v"]
 [ext_resource type="Texture2D" uid="uid://c6jtxhawp5ks8" path="res://assets/sprites/Add new icon.png" id="6_xplbd"]
+[ext_resource type="Texture2D" uid="uid://bebv10vednp87" path="res://assets/sprites/Home Tab/Bold icon pressed.png" id="7_ahyqc"]
 [ext_resource type="Texture2D" uid="uid://bqlwq6uul64ug" path="res://assets/sprites/Home Tab/Center Align Paragraph.png" id="7_xqcey"]
+[ext_resource type="Texture2D" uid="uid://dbb8nsvuatxet" path="res://assets/sprites/Home Tab/Bold icon hover.png" id="8_t7a27"]
 [ext_resource type="Texture2D" uid="uid://clroi74s2mqec" path="res://assets/sprites/Home Tab/Right Align Paragraph.png" id="10_onyvt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ov4sg"]
+bg_color = Color(0.12156863, 0.12156863, 0.12941177, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.12156863, 0.12156863, 0.12941177, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ftd1h"]
+color = Color(0.49803922, 0.49803922, 0.49803922, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ftd1h"]
 
@@ -77,7 +91,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/tab_separation = 8
 theme_override_fonts/font = ExtResource("3_t7a27")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
 current_tab = 1
 drag_to_rearrange_enabled = true
 
@@ -95,11 +109,24 @@ size_flags_vertical = 3
 theme_override_constants/separation = 8
 metadata/_tab_index = 1
 
-[node name="Font selection" type="OptionButton" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home" unique_id=1292267207]
-custom_minimum_size = Vector2(96, 32)
+[node name="Control" type="Control" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home" unique_id=296563396]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home" unique_id=1359444291]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer" unique_id=378116081]
+layout_mode = 2
+
+[node name="Font" type="OptionButton" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer" unique_id=1292267207]
+custom_minimum_size = Vector2(192, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_t7a27")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ov4sg")
 selected = 0
 fit_to_longest_item = false
 item_count = 2
@@ -108,12 +135,35 @@ popup/item_0/id = 0
 popup/item_1/text = "teset"
 popup/item_1/id = 1
 
-[node name="Paragraph alignment" type="OptionButton" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home" unique_id=1734297156]
+[node name="Font size" type="SpinBox" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer" unique_id=1019287436]
+layout_mode = 2
+size_flags_vertical = 4
+min_value = 1.0
+value = 1.0
+allow_greater = true
+
+[node name="HSeparator" type="HSeparator" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer" unique_id=1923380770]
+layout_mode = 2
+theme = ExtResource("4_sfrgt")
+theme_override_styles/separator = SubResource("StyleBoxLine_ftd1h")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer" unique_id=852831134]
+layout_mode = 2
+
+[node name="Bold" type="TextureButton" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2" unique_id=2001389075]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("6_rin3v")
+texture_pressed = ExtResource("7_ahyqc")
+texture_hover = ExtResource("8_t7a27")
+
+[node name="Paragraph alignment" type="OptionButton" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2" unique_id=1734297156]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = SubResource("Theme_ftd1h")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ov4sg")
 icon_alignment = 1
 expand_icon = true
 selected = 0
