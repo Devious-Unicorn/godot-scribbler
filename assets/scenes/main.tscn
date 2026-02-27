@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://dxv6dbr7f1v1h" path="res://assets/fonts/helvetica-255/Helvetica-Bold.ttf" id="3_t7a27"]
 [ext_resource type="Texture2D" uid="uid://bp4g38kgwi01g" path="res://assets/sprites/Home Tab/Left Align Paragraph.png" id="4_ahyqc"]
 [ext_resource type="Script" uid="uid://bjgd8r4xi1pe5" path="res://assets/scripts/file_screen.gd" id="4_ftd1h"]
-[ext_resource type="Theme" uid="uid://dd0e45ra2x2xg" path="res://assets/themes/Horizontal line.tres" id="4_sfrgt"]
+[ext_resource type="Theme" uid="uid://bkyexgiwg8vww" path="res://assets/themes/Vertical line.tres" id="5_m64nd"]
 [ext_resource type="Theme" uid="uid://dnrr0pq6qbitx" path="res://assets/themes/Add button.tres" id="5_vesw4"]
 [ext_resource type="Texture2D" uid="uid://dnov1wgxisbt5" path="res://assets/sprites/Home Tab/Bold icon.png" id="6_rin3v"]
 [ext_resource type="Texture2D" uid="uid://c6jtxhawp5ks8" path="res://assets/sprites/Add new icon.png" id="6_xplbd"]
@@ -23,6 +23,9 @@
 [ext_resource type="Texture2D" uid="uid://3gmrdw6wsysd" path="res://assets/sprites/Home Tab/Strikethrough icon.png" id="15_m64nd"]
 [ext_resource type="Texture2D" uid="uid://coqtymfy3ux8d" path="res://assets/sprites/Home Tab/Strikethrough icon pressed.png" id="16_ye0uq"]
 [ext_resource type="Texture2D" uid="uid://1wvxydl5atcd" path="res://assets/sprites/Home Tab/Strikethrough icon hover.png" id="17_k0jt7"]
+[ext_resource type="Texture2D" uid="uid://26jd5jyl3yut" path="res://assets/sprites/Home Tab/Subscript.png" id="18_k0jt7"]
+[ext_resource type="Texture2D" uid="uid://cbucffnd3fcua" path="res://assets/sprites/Home Tab/Superscript.png" id="19_pqtk7"]
+[ext_resource type="Theme" uid="uid://dd0e45ra2x2xg" path="res://assets/themes/Horizontal line.tres" id="20_pqtk7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ov4sg"]
 bg_color = Color(0.12156863, 0.12156863, 0.12941177, 1)
@@ -39,6 +42,27 @@ color = Color(0.49803922, 0.49803922, 0.49803922, 1)
 
 [sub_resource type="Theme" id="Theme_ftd1h"]
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_ftd1h")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbgu6"]
+bg_color = Color(0.2509804, 0.2509804, 0.2509804, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxv8u"]
+bg_color = Color(0.91764706, 0.15686275, 0.09019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elvbs"]
+bg_color = Color(2.2583575, 0.44889736, 0.2903364, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rk0tg"]
+bg_color = Color(1.67806, 0.32249647, 0.20371, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mr7gh"]
 bg_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
@@ -153,7 +177,7 @@ allow_greater = true
 
 [node name="HSeparator" type="HSeparator" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer" unique_id=1923380770]
 layout_mode = 2
-theme = ExtResource("4_sfrgt")
+theme = ExtResource("5_m64nd")
 theme_override_styles/separator = SubResource("StyleBoxLine_ftd1h")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer" unique_id=852831134]
@@ -162,6 +186,7 @@ layout_mode = 2
 [node name="Bold" type="TextureButton" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2" unique_id=2001389075]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
+tooltip_text = "Bold"
 texture_normal = ExtResource("6_rin3v")
 texture_pressed = ExtResource("7_ahyqc")
 texture_hover = ExtResource("8_t7a27")
@@ -171,6 +196,7 @@ stretch_mode = 0
 [node name="Italic" type="TextureButton" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2" unique_id=976381009]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
+tooltip_text = "Italic"
 texture_normal = ExtResource("9_v3q3d")
 texture_pressed = ExtResource("10_q5xp6")
 texture_hover = ExtResource("11_m64nd")
@@ -180,6 +206,7 @@ stretch_mode = 0
 [node name="Underline" type="TextureButton" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2" unique_id=2113822882]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
+tooltip_text = "Underline"
 texture_normal = ExtResource("12_ye0uq")
 texture_pressed = ExtResource("13_k0jt7")
 texture_hover = ExtResource("14_pqtk7")
@@ -189,11 +216,189 @@ stretch_mode = 0
 [node name="Striketrough" type="TextureButton" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2" unique_id=22900567]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
+tooltip_text = "Strikethrough"
 texture_normal = ExtResource("15_m64nd")
 texture_pressed = ExtResource("16_ye0uq")
 texture_hover = ExtResource("17_k0jt7")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Subtext & Supertext" type="OptionButton" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2" unique_id=1101529348]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "Subtext & suptertext"
+theme = SubResource("Theme_ftd1h")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ov4sg")
+icon_alignment = 1
+expand_icon = true
+selected = 0
+item_count = 2
+popup/item_0/icon = ExtResource("18_k0jt7")
+popup/item_0/id = 0
+popup/item_1/icon = ExtResource("19_pqtk7")
+popup/item_1/id = 1
+
+[node name="VSeparator" type="VSeparator" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2" unique_id=213306515]
+layout_mode = 2
+theme = ExtResource("5_m64nd")
+
+[node name="Highlight" type="MenuButton" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2" unique_id=781178206]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "Highlight"
+expand_icon = true
+
+[node name="PopupMenu" type="PopupMenu" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight" unique_id=1710758597]
+oversampling_override = 1.0
+position = Vector2i(300, 175)
+size = Vector2i(130, 111)
+theme_override_styles/panel = SubResource("StyleBoxFlat_jbgu6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu" unique_id=2037253276]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 126.0
+offset_bottom = 97.0
+size_flags_horizontal = 6
+
+[node name="GridContainer" type="GridContainer" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer" unique_id=2111633726]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 5
+
+[node name="Button" type="Button" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/GridContainer" unique_id=604564279]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kxv8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_elvbs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rk0tg")
+
+[node name="Button2" type="Button" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/GridContainer" unique_id=2083239396]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kxv8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_elvbs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rk0tg")
+
+[node name="Button3" type="Button" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/GridContainer" unique_id=28276660]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kxv8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_elvbs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rk0tg")
+
+[node name="Button4" type="Button" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/GridContainer" unique_id=379698588]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kxv8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_elvbs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rk0tg")
+
+[node name="Button5" type="Button" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/GridContainer" unique_id=537072911]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kxv8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_elvbs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rk0tg")
+
+[node name="Button11" type="Button" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/GridContainer" unique_id=98530827]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kxv8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_elvbs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rk0tg")
+
+[node name="Button12" type="Button" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/GridContainer" unique_id=156807633]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kxv8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_elvbs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rk0tg")
+
+[node name="Button13" type="Button" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/GridContainer" unique_id=1723823574]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kxv8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_elvbs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rk0tg")
+
+[node name="Button14" type="Button" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/GridContainer" unique_id=2036553108]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kxv8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_elvbs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rk0tg")
+
+[node name="Button15" type="Button" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/GridContainer" unique_id=1344871721]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kxv8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_elvbs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rk0tg")
+
+[node name="Button6" type="Button" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/GridContainer" unique_id=382526287]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kxv8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_elvbs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rk0tg")
+
+[node name="Button7" type="Button" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/GridContainer" unique_id=319238123]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kxv8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_elvbs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rk0tg")
+
+[node name="Button8" type="Button" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/GridContainer" unique_id=1559387166]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kxv8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_elvbs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rk0tg")
+
+[node name="Button9" type="Button" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/GridContainer" unique_id=1897160358]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kxv8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_elvbs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rk0tg")
+
+[node name="Button10" type="Button" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/GridContainer" unique_id=716339299]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kxv8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_elvbs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rk0tg")
+
+[node name="HSeparator" type="HSeparator" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer" unique_id=544488475]
+layout_mode = 2
+theme = ExtResource("20_pqtk7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer" unique_id=96167686]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/HBoxContainer" unique_id=803289013]
+layout_mode = 2
+text = "Custom:"
+
+[node name="Control" type="Control" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/HBoxContainer" unique_id=1624774334]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight/PopupMenu/VBoxContainer/HBoxContainer" unique_id=1325988130]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VSeparator2" type="VSeparator" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2" unique_id=1462003169]
+layout_mode = 2
+theme = ExtResource("5_m64nd")
 
 [node name="Paragraph alignment" type="OptionButton" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2" unique_id=1734297156]
 custom_minimum_size = Vector2(48, 48)
@@ -247,7 +452,7 @@ horizontal_alignment = 1
 [node name="HSeparator" type="HSeparator" parent="Main View/VSplitContainer/HSplitContainer/Sidebar/VBoxContainer" unique_id=1894803308]
 texture_filter = 1
 layout_mode = 2
-theme = ExtResource("4_sfrgt")
+theme = ExtResource("5_m64nd")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Main View/VSplitContainer/HSplitContainer/Sidebar/VBoxContainer" unique_id=1495193106]
 texture_filter = 1
@@ -295,7 +500,7 @@ horizontal_alignment = 1
 [node name="HSeparator" type="HSeparator" parent="Main View/VSplitContainer/HSplitContainer/HSplitContainer/Pages/VBoxContainer" unique_id=747748828]
 texture_filter = 1
 layout_mode = 2
-theme = ExtResource("4_sfrgt")
+theme = ExtResource("5_m64nd")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Main View/VSplitContainer/HSplitContainer/HSplitContainer/Pages/VBoxContainer" unique_id=601848036]
 texture_filter = 1
