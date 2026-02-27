@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://1wvxydl5atcd" path="res://assets/sprites/Home Tab/Strikethrough icon hover.png" id="17_k0jt7"]
 [ext_resource type="Texture2D" uid="uid://26jd5jyl3yut" path="res://assets/sprites/Home Tab/Subscript.png" id="18_k0jt7"]
 [ext_resource type="Texture2D" uid="uid://cbucffnd3fcua" path="res://assets/sprites/Home Tab/Superscript.png" id="19_pqtk7"]
+[ext_resource type="Script" uid="uid://2v3gtqgoj64d" path="res://assets/scripts/highlight.gd" id="20_jbgu6"]
 [ext_resource type="Theme" uid="uid://dd0e45ra2x2xg" path="res://assets/themes/Horizontal line.tres" id="20_pqtk7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ov4sg"]
@@ -251,6 +252,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 tooltip_text = "Highlight"
 expand_icon = true
+script = ExtResource("20_jbgu6")
 
 [node name="PopupMenu" type="PopupMenu" parent="Main View/VSplitContainer/Toolbar/Toolbar options/Home/VBoxContainer/HBoxContainer2/Highlight" unique_id=1710758597]
 oversampling_override = 1.0
